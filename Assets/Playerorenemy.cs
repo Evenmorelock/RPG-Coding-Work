@@ -29,7 +29,9 @@ public class Playerorenemy : MonoBehaviour
     public TurnManager turnManager;
     public Button healthHeal;
     public int healthToHeal;
-    void Start()
+    public GameObject pointer;
+
+    public void SetHealth()
     {
         if (isEnemy == true && bigEnemy == false)
         {
@@ -51,6 +53,7 @@ public class Playerorenemy : MonoBehaviour
             deathCondition.text = "Condition; Dead";
             Destroy(myGameObject);
         }
+
     }
     void Update()
     {
@@ -59,6 +62,7 @@ public class Playerorenemy : MonoBehaviour
             Destroy(this.gameObject);
         }
         Button btn = yourButton.GetComponent<Button>();
+        pointer.SetActive(true);
 
         if (isEnemy == false)
         {
@@ -77,13 +81,29 @@ public class Playerorenemy : MonoBehaviour
             {
                 target = newList2.Last().gameObject;
             }
-            else { target = players.transform.GetChild(Random.Range(0, players.transform.childCount - 1)).gameObject; }
+            else 
+            { 
+                target = players.transform.GetChild(Random.Range(0, players.transform.childCount - 1)).gameObject; 
+            }
             target.GetComponent<health>().theHealth -= damageToDeal + Random.Range(-1, 1);
-            turnManager.nextTurn = true;
+            turnManager.turnEnded = true;
         }
 
+        
+
+    }
+
+    public void OnEnable()
+    {
         attackButton.onClick.AddListener(EnableAttack);
         healthHeal.onClick.AddListener(heal);
+    }
+
+    public void OnDisable()
+    {
+        pointer.SetActive(false);
+        attackButton.onClick.RemoveListener(EnableAttack);
+        healthHeal.onClick.RemoveListener(heal);
 
     }
 
@@ -98,14 +118,18 @@ public class Playerorenemy : MonoBehaviour
 
     void heal()
     {
-        gameObject.GetComponent<health>().theHealth += healthToHeal;
-        turnManager.nextTurn = true;
+        
+         gameObject.GetComponent<health>().theHealth += healthToHeal;
+        turnManager.turnEnded = true;
+
     }
 
     public void OnClick(InputAction.CallbackContext context)
     {
+        Debug.Log("Click1");
         if (isEnemy == false && canAttack == true)
         {
+            Debug.Log("Click2");
             if (!context.started) return;
             var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
@@ -114,8 +138,9 @@ public class Playerorenemy : MonoBehaviour
             {
                 if (rayHit.collider.gameObject.tag != "Player")
                     rayHit.collider.gameObject.GetComponent<health>().theHealth -= damageToDeal;
-                turnManager.nextTurn = true;
                 canAttack = false;
+                pointer.SetActive(false);
+                turnManager.turnEnded = true;
             }
             else
             {

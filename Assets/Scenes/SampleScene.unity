@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &267910488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -470,12 +470,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267910487}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4.9885, y: 3.69, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -4.0320034, y: 3.5267563, z: 0.0108848885}
   m_LocalScale: {x: 0.42452183, y: 0.3221056, z: 0.87412626}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1528113945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &349409313
 GameObject:
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458317254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f38a26ea5ab58840b491093ad6646d9, type: 3}
   m_Name: 
@@ -923,6 +923,7 @@ MonoBehaviour:
   turnManager: {fileID: 1326911366}
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
+  pointer: {fileID: 1156987460}
 --- !u!114 &458317258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +939,7 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 2
+  character: {fileID: 458317257}
 --- !u!61 &458317259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1225,7 +1227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &538951398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1286,12 +1288,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538951397}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 6.31, y: 3.21, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.01999998, y: 1.6599998, z: 0.053167388}
   m_LocalScale: {x: 0.42452183, y: 0.3221056, z: 0.87412626}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1485409906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &593566211 stripped
 GameObject:
@@ -1333,6 +1335,7 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
+  character: {fileID: 0}
 --- !u!114 &593566215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,7 +1343,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593566211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f38a26ea5ab58840b491093ad6646d9, type: 3}
   m_Name: 
@@ -1365,6 +1368,7 @@ MonoBehaviour:
   turnManager: {fileID: 1326911366}
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
+  pointer: {fileID: 1377833554}
 --- !u!61 &593566216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1467,7 +1471,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 3026a6f8e3fed784bb850d42efdb9bc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1674,6 +1678,7 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
+  character: {fileID: 0}
 --- !u!114 &890078634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,7 +1686,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890078630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f38a26ea5ab58840b491093ad6646d9, type: 3}
   m_Name: 
@@ -1706,6 +1711,7 @@ MonoBehaviour:
   turnManager: {fileID: 1326911366}
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
+  pointer: {fileID: 1191986830}
 --- !u!1001 &997852934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1780,7 +1786,10 @@ PrefabInstance:
       objectReference: {fileID: 492029275}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3276308954341223666, guid: 8d80f935b70c78f4c9cc03df1caf3f46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1191986832}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2380037855239308963, guid: 8d80f935b70c78f4c9cc03df1caf3f46, type: 3}
       insertIndex: -1
@@ -1805,7 +1814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1156987461
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1866,12 +1875,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156987460}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 2.29, y: 2.36, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.16999984, y: 2.4813628, z: 0.053167388}
   m_LocalScale: {x: 0.42452183, y: 0.3221056, z: 0.87412626}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 458317256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1191986830
 GameObject:
@@ -1889,7 +1898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1191986831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1950,12 +1959,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191986830}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4.33, y: -0.26, z: 0}
-  m_LocalScale: {x: 0.42452183, y: 0.3221056, z: 0.87412626}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.01856022, y: 0.18747468, z: 0.0010884888}
+  m_LocalScale: {x: 0.042452183, y: 0.03221056, z: 0.087412626}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 890078632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1326911365
 GameObject:
@@ -1988,14 +1997,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lose: 0
   win: 0
-  nextTurn: 1
+  nextRound: 1
   players: {fileID: 1848980337}
   playerNumber: 2
   enemies: {fileID: 719594160}
   enemyNumber: 3
   turnOrder: []
   turnEnded: 0
-  GO: 1
+  GO: 0
 --- !u!4 &1326911367
 Transform:
   m_ObjectHideFlags: 0
@@ -2163,7 +2172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1377833555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2224,12 +2233,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377833554}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 6.39, y: -1.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.009999752, y: 1.5699999, z: 0.053167388}
   m_LocalScale: {x: 0.42452183, y: 0.3221056, z: 0.87412626}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 593566213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1405681167
 GameObject:
@@ -2405,6 +2414,7 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
+  character: {fileID: 0}
 --- !u!114 &1485409908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,7 +2422,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485409904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f38a26ea5ab58840b491093ad6646d9, type: 3}
   m_Name: 
@@ -2437,6 +2447,7 @@ MonoBehaviour:
   turnManager: {fileID: 1326911366}
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
+  pointer: {fileID: 538951397}
 --- !u!61 &1485409909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2515,6 +2526,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1958784274}
+  - {fileID: 267910489}
   m_Father: {fileID: 1848980338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1528113946
@@ -2550,6 +2562,7 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 4
+  character: {fileID: 0}
 --- !u!114 &1528113948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2557,7 +2570,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528113944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f38a26ea5ab58840b491093ad6646d9, type: 3}
   m_Name: 
@@ -2582,6 +2595,7 @@ MonoBehaviour:
   turnManager: {fileID: 1326911366}
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
+  pointer: {fileID: 267910487}
 --- !u!1 &1653194802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,7 +2732,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6509652404474200033, guid: 3a713beeb0e8d474b9d349aa5637b24c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 538951399}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 436865975182665430, guid: 3a713beeb0e8d474b9d349aa5637b24c, type: 3}
       insertIndex: -1
@@ -3074,7 +3091,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6509652404474200033, guid: 3a713beeb0e8d474b9d349aa5637b24c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1377833556}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 436865975182665430, guid: 3a713beeb0e8d474b9d349aa5637b24c, type: 3}
       insertIndex: -1
@@ -3143,7 +3163,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 100423924196600059, guid: ee25e4126fea34b458d2e6288b83748f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1156987462}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1944423278017808076, guid: ee25e4126fea34b458d2e6288b83748f, type: 3}
       insertIndex: -1
@@ -3163,11 +3186,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 267910489}
-  - {fileID: 1191986832}
-  - {fileID: 1156987462}
-  - {fileID: 538951399}
-  - {fileID: 1377833556}
   - {fileID: 1963131402}
   - {fileID: 2124838550}
   - {fileID: 1326911367}

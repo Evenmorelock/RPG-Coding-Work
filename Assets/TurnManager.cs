@@ -8,7 +8,7 @@ public class TurnManager : MonoBehaviour
 {
     public bool lose = false;
     public bool win = false;
-    public bool nextTurn = true;
+    public bool nextRound = true;
     public GameObject players;
     public int playerNumber;
     public GameObject enemies;
@@ -23,7 +23,7 @@ public class TurnManager : MonoBehaviour
     {
         playerNumber = players.transform.childCount;
         enemyNumber = enemies.transform.childCount;
-        if (nextTurn == true)
+        if (nextRound == true)
         {
             if (enemyNumber > 0)
             {
@@ -44,13 +44,17 @@ public class TurnManager : MonoBehaviour
                     players.transform.GetChild(enemye - 1).GetComponent<Playerorenemy>().enabled = false;
                     players.transform.GetChild(enemye - 1).GetComponent<health>().nextTurn = speed + (int)Random.Range(-1, 1);
                     turnOrder.Add(players.transform.GetChild(enemye - 1).GetComponent<health>());
-                    nextTurn = false;
+                    nextRound = false;
                 }
             }
             else { lose = true; }
         }
+
         List<health> newList = turnOrder.OrderByDescending(x => x.nextTurn).ToList();
+
+        Debug.Log(newList.Count);
         health first = newList.Last();
+
         if (GO == true)
         {
             first.GetComponent<Playerorenemy>().enabled = true;
@@ -58,13 +62,14 @@ public class TurnManager : MonoBehaviour
         }
         if (turnEnded == true)
         {
+            Debug.Log("TURN HAS ENDED");
             first.GetComponent<Playerorenemy>().enabled = false;
             turnOrder.Remove(first);
             GO = true;
             turnEnded = false;
             if (turnOrder.Count == 0)
             {
-                nextTurn = true;
+                nextRound = true;
             }
         }
     }
