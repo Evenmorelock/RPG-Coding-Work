@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.Processors;
 
 public class Playerorenemy : MonoBehaviour
 {
@@ -57,10 +58,6 @@ public class Playerorenemy : MonoBehaviour
     }
     void Update()
     {
-        if (myHealth.theHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
         Button btn = yourButton.GetComponent<Button>();
         pointer.SetActive(true);
 
@@ -69,7 +66,7 @@ public class Playerorenemy : MonoBehaviour
             damageToDeal = Random.Range(8, 12);
             healthToHeal = Random.Range(7, 12);
         }
-        else
+        else if (isEnemy == true && myHealth.isDead == true)
         {
             for (int playerCount = players.transform.childCount; playerCount > 0; playerCount--)
             {
@@ -86,6 +83,10 @@ public class Playerorenemy : MonoBehaviour
                 target = players.transform.GetChild(Random.Range(0, players.transform.childCount - 1)).gameObject; 
             }
             target.GetComponent<health>().theHealth -= damageToDeal + Random.Range(-1, 1);
+            turnManager.turnEnded = true;
+        }
+        else if (isEnemy == true && myHealth.isDead == false)
+        {
             turnManager.turnEnded = true;
         }
 

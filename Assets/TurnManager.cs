@@ -14,6 +14,7 @@ public class TurnManager : MonoBehaviour
     public GameObject enemies;
     public int enemyNumber;
     public List<health> turnOrder;
+    public List<health> newList;
     public bool turnEnded;
     public bool GO;
     // Update is called once per frame
@@ -50,10 +51,11 @@ public class TurnManager : MonoBehaviour
             else { lose = true; }
         }
 
-        List<health> newList = turnOrder.OrderByDescending(x => x.nextTurn).ToList();
+        newList = turnOrder.OrderByDescending(x => x.nextTurn).ToList();
 
         Debug.Log(newList.Count);
         health first = newList.Last();
+
 
         if (GO == true)
         {

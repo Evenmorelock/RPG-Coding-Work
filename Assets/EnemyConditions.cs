@@ -7,11 +7,6 @@ public class EnemyConditions : MonoBehaviour
     public TMPro.TextMeshProUGUI condition;
     public Playerorenemy maxHealth;
     public health currentHealth;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

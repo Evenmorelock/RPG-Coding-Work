@@ -939,7 +939,9 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 2
+  isDead: 0
   character: {fileID: 458317257}
+  turnManager: {fileID: 1326911366}
 --- !u!61 &458317259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1335,7 +1337,9 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
-  character: {fileID: 0}
+  isDead: 0
+  character: {fileID: 593566215}
+  turnManager: {fileID: 1326911366}
 --- !u!114 &593566215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,7 +1682,9 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
-  character: {fileID: 0}
+  isDead: 0
+  character: {fileID: 890078634}
+  turnManager: {fileID: 1326911366}
 --- !u!114 &890078634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,6 +1718,52 @@ MonoBehaviour:
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
   pointer: {fileID: 1191986830}
+--- !u!114 &890078636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890078630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 99c2dd182867c26498172f166b9704eb, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 890078634}
+        m_TargetAssemblyTypeName: Playerorenemy, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4924c8ec-c511-479f-9bad-451e09007e48
+    m_ActionName: Input/Click[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &997852934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1797,6 +1849,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2380037855239308963, guid: 8d80f935b70c78f4c9cc03df1caf3f46, type: 3}
       insertIndex: -1
       addedObject: {fileID: 890078633}
+    - targetCorrespondingSourceObject: {fileID: 2380037855239308963, guid: 8d80f935b70c78f4c9cc03df1caf3f46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 890078636}
   m_SourcePrefab: {fileID: 100100000, guid: 8d80f935b70c78f4c9cc03df1caf3f46, type: 3}
 --- !u!1 &1156987460
 GameObject:
@@ -2003,8 +2058,9 @@ MonoBehaviour:
   enemies: {fileID: 719594160}
   enemyNumber: 3
   turnOrder: []
+  newList: []
   turnEnded: 0
-  GO: 0
+  GO: 1
 --- !u!4 &1326911367
 Transform:
   m_ObjectHideFlags: 0
@@ -2414,7 +2470,9 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 3
-  character: {fileID: 0}
+  isDead: 0
+  character: {fileID: 1485409908}
+  turnManager: {fileID: 1326911366}
 --- !u!114 &1485409908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,6 +2563,7 @@ GameObject:
   - component: {fileID: 1528113946}
   - component: {fileID: 1528113948}
   - component: {fileID: 1528113947}
+  - component: {fileID: 1528113949}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player
@@ -2562,7 +2621,9 @@ MonoBehaviour:
   theHealth: 0
   nextTurn: 0
   speed: 4
-  character: {fileID: 0}
+  isDead: 0
+  character: {fileID: 1528113948}
+  turnManager: {fileID: 1326911366}
 --- !u!114 &1528113948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,6 +2657,52 @@ MonoBehaviour:
   healthHeal: {fileID: 369341728}
   healthToHeal: 0
   pointer: {fileID: 267910487}
+--- !u!114 &1528113949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528113944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 99c2dd182867c26498172f166b9704eb, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1528113948}
+        m_TargetAssemblyTypeName: Playerorenemy, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4924c8ec-c511-479f-9bad-451e09007e48
+    m_ActionName: Input/Click[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1653194802
 GameObject:
   m_ObjectHideFlags: 0
